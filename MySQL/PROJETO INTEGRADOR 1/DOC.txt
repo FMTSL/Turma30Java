@@ -1,0 +1,23 @@
+Nomes:
+Fábio Campaner.
+Felipe Matos de Lima.
+Felipe Souza da Silva.
+Giovanna Siqueira Paiva dos Penedos.
+Leticia Porto Martins.
+Vinícios Lisboa.
+
+tb_categoria:
+nome_ong- para diferenciar as ONGs disponíveis em nosso site.
+local_atuacao- para mostrar a localização onde as ONGs atuam.
+tipo- para diferenciar se as ONGs são: associação, fundação ou instituição.
+
+tb_produto:
+nome_produto- Para mostrar opções de produtos. 
+valor- para demonstrar possíveis valores de produtos.
+estoque- para mostrar a quantidade disponível.
+descricao- detalhamento de cada produto.
+
+tb_usuario:
+nome_completo- para cadastro
+email- para ser usado como usuário
+senha- para segurança
