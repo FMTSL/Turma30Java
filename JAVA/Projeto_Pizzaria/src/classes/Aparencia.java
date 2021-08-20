@@ -1,4 +1,4 @@
-package entidades;
+package classes;
 
 public class Aparencia {
 

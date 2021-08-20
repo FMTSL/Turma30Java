@@ -1,5 +1,5 @@
 
-package aplicações;
+package aplications;
 
 import java.util.*;
 
@@ -64,15 +64,15 @@ public class Loja {
 		do {
 			pos = -1;
 			// Escolha: Pizza ou Salgado
-			Aparencia.pizzaSalgado();
+			classes.Aparencia.pizzaSalgado();
 			op2 = leia.next().toUpperCase().charAt(0);
 
 			// Caso a escolha seja Pizza
 			if (op2 == 'P') {
 
 				// Imprime catálogo de Pizzas
-				Aparencia.mostraTLoja();
-				for (Produto menu : cardapioPizza) {
+				classes.Aparencia.mostraTLoja();
+				for (classes.Produto menu : cardapioPizza) {
 					System.out.println(menu.getCodigo() + "\t\t" + menu.getSabor() + "\t\t" + menu.getPreco() + "\t\t"
 							+ menu.getEstoque());
 				}
@@ -80,8 +80,8 @@ public class Loja {
 			} else if (op2 == 'S') {
 
 				// Imprime catálogo de Salgados
-				Aparencia.mostraTLoja();
-				for (Produto menu : cardapioSalgado) {
+				classes.Aparencia.mostraTLoja();
+				for (classes.Produto menu : cardapioSalgado) {
 					System.out.println(menu.getCodigo() + "\t\t" + menu.getSabor() + "\t\t" + menu.getPreco() + "\t\t"
 							+ menu.getEstoque());
 				}
@@ -102,7 +102,7 @@ public class Loja {
 			}
 
 			if (pos >= 0) {
-				Aparencia.mostraTLoja();
+				classes.Aparencia.mostraTLoja();
 				System.out.printf("%s\t\t%s\t\t%.2f\t\t%d\n", comidas.get(pos).getCodigo(), comidas.get(pos).getSabor(),
 						comidas.get(pos).getPreco(), comidas.get(pos).getEstoque());
 				System.out.println("Informe quantos tu vai querer :");
@@ -117,7 +117,7 @@ public class Loja {
 				} else if (comidas.get(pos).getEstoque() < auxQtde) {
 					System.out.print("Impossivel realizar, quantidade maior que estoque!!");
 				} else {
-					comidas.add(new Produto(comidas.get(pos).getCodigo(), comidas.get(pos).getSabor(),
+					comidas.add(new classes.Produto(comidas.get(pos).getCodigo(), comidas.get(pos).getSabor(),
 							comidas.get(pos).getPreco(), auxQtde));
 				}
 			} else {
@@ -134,7 +134,7 @@ public class Loja {
 		
 
 		double auxTotal = 0;
-		for (Produto escolhido : carrinho) {
+		for (classes.Produto escolhido : carrinho) {
 			for (int x = 0; x < carrinho.size(); x++) {
 				if (comidas.get(x).getCodigo().equals(escolhido.getCodigo())) {
 					pos = x;
@@ -152,7 +152,7 @@ public class Loja {
 		System.out.println("FECHAMENTO DA COMPRA");
 		System.out.println("COD\tVALOR\tQUANTIDADE\tPRODUTO");
 		
-		for (Produto escolhido : carrinho) {
+		for (classes.Produto escolhido : carrinho) {
 			for (int x=0; x<comidas.size(); x++ ) {
 				
 				if (comidas.get(x).getCodigo().equals(escolhido.getCodigo())) {
@@ -167,7 +167,7 @@ public class Loja {
 		comidas.get(pos).retiraEstoque(escolhido.getEstoque());
 	}
 		
-		for (Produto item : carrinho) {
+		for (classes.Produto item : carrinho) {
 			System.out.println(item.getCodigo() + "\t" + item.getPreco() + "\t" + item.getEstoque() + "\t" + item.getSabor());
 		}
 		System.out.println("FECHAMENTO R$: " + auxTotal);

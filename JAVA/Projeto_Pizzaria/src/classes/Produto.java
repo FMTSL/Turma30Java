@@ -2,7 +2,7 @@ package classes;
 
 import java.util.Scanner;
 
-public abstract class Produto {
+public class Produto {
 
 	Scanner leia = new Scanner(System.in);
 	// Atributos
