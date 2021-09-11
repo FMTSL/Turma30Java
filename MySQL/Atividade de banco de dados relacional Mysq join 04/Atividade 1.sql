@@ -29,4 +29,4 @@ create table tb_classe( -- create table
     where tb_classe.defesa >=1000 and tb_classe.defesa <=2000;
     
     select * from tb_personagem where nome like 'C%';
-    select * from tb_personagem where classe_id = 3;
+    select * from tb_personagem where classe_id = 3;idididpostagempostagemdatetitulopostagempostagempostagempostagem
