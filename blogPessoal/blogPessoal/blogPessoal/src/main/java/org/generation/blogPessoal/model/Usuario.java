@@ -15,29 +15,33 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-
+	
 	@NotNull
 	@Size(min = 2, max = 100)
 	private String nome;
-
+	
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 2, max = 100)
 	private String usuario;
-
+	
 	@NotNull
 	@Size(min = 2, max = 100)
 	private String senha;
 	
-	public Usuario (){
-		
-	}
-
+	
 	public Usuario(long id, String nome, String usuario, String senha) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
 	}
+
+
+	public Usuario() {
+		
+	}
+
 
 	public long getId() {
 		return id;
@@ -59,8 +63,8 @@ public class Usuario {
 		return usuario;
 	}
 
-	public void setUsuario(String usuário) {
-		this.usuario = usuário;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
@@ -70,5 +74,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
 }

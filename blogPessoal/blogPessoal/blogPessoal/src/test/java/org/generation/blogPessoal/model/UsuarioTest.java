@@ -17,19 +17,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
+
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class UsuarioTest {
-	public Usuario usuario;
-	public Usuario usuarioErro = new Usuario();
+    
+    public Usuario usuario;
+    public Usuario usuarioErro = new Usuario();
 
 	@Autowired
-	private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-
+	private  ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+	
 	Validator validator = factory.getValidator();
 
 	@BeforeEach
 	public void start() {
-
 		usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278");
 
 	}
@@ -39,19 +40,22 @@ public class UsuarioTest {
 	void testValidaAtributos() {
 
 		Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuario);
-
+		
 		System.out.println(violacao.toString());
 
 		assertTrue(violacao.isEmpty());
 	}
-
-	@Test
+    
+    @Test
 	@DisplayName("✖ Não Valida Atributos Nulos")
-	void testNaoValidaAtributos() {
+	void  testNaoValidaAtributos() {
 
 		Set<ConstraintViolation<Usuario>> violacao = validator.validate(usuarioErro);
 		System.out.println(violacao.toString());
 
 		assertFalse(violacao.isEmpty());
 	}
+
+
+	
 }
